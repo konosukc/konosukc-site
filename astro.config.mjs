@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightObsidian, { obsidianSidebarGroup } from 'starlight-obsidian';
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,6 +9,11 @@ export default defineConfig({
 		starlight({
 			title: 'My Docs',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			plugins: [
+				starlightObsidian({
+					vault: 'src/content/konosukc-site',
+				}),
+			],
 			sidebar: [
 				{
 					label: 'Guides',
@@ -20,6 +26,7 @@ export default defineConfig({
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
+				obsidianSidebarGroup,
 			],
 		}),
 	],
