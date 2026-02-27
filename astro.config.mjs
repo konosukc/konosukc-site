@@ -7,7 +7,7 @@ import starlightObsidian, { obsidianSidebarGroup } from 'starlight-obsidian';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: '@konosukc',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/konosukc' }],
 			plugins: [
 				starlightObsidian({
